@@ -13,5 +13,5 @@
  *= require_tree .
  *= require_self
  *= require bootstrap
+ *= require home
  */
-body { padding-top: 70px; }

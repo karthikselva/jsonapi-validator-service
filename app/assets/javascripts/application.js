@@ -19,7 +19,7 @@
 //= require bootstrap
 //= require tv4
 //= require jsonapi/validator
-//= require ux/results
+//= require ux/home
 //= require handlebars
 //= require handlebars-helpers
 //= require jquery-slimscroll

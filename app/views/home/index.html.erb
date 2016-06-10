@@ -1,21 +1,24 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#">
-				JSON API Response Validator
-			</a>
-		</div>
+<div class="row">
+
+	<div class='col-md-12'>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">
+						JSON API Format Validator
+					</a>
+				</div>
+			</div>
+		</nav>
 	</div>
-</nav>
+
+</div>
 
 <div class="row">
   <div class="col-md-6">
-		<div class="panel panel-info">
+		<div class="panel panel-default">
 		  <div class="panel-heading">
-		  	Input valid JSON
-		  	<button type="button" class="btn btn-success btn-sm pull-right" onclick="UX.RESULTS.runCheck()">
-				  <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> refresh
-				</button>
+		  	Input your JSON API response
 		  </div>
 		  <div class="panel-body">
 				<textarea class="form-control" id="json-input" style="width: 100%; height: 770px;" placeholder="Paste your JSON here"></textarea>
@@ -23,17 +26,29 @@
 		</div>
   </div>
   <div class="col-md-5">
-  	<div class="panel panel-primary">
-		  <div class="panel-heading">Results</div>
-		  <div class="panel-body" style="height: 800px">
-		  	<div id='json-valid-result'></div>
+  	<div class="panel panel-default">
+		  <div class="panel-heading">
+		  	Results
+		  	<button type="button" class="btn btn-default btn-sm" onclick="UX.RESULTS.runCheck()">
+				  <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> refresh
+				</button>		  	
+		  </div>
+		  <div class="panel-body" style="height: 790px">
+		  	<div id='json-valid-result'>
+		  		<div class="alert alert-default" role="alert">
+		  			Please provide JSON to see results.
+		  		</div>
+		  	</div>
+		  	<div class="alert alert-info" role="alert">
+				  <strong>Note:</strong> Refer <a href='http://jsonapi.org/format/'>jsonapi.org/format</a> specification for more details on implementation
+				</div>
 		  	<div id="results">
-		    	Please input JSON to see results.
 		    </div>
 		  </div>
 		</div>
   </div>
 </div>
+
 
 <script>
 	JSONAPI.VALIDATOR.setSchema('<%=j STANDARD_SCHEMA.to_json.html_safe %>');
@@ -61,11 +76,12 @@
 		{{else}}
 			<span class="label label-danger">Invalid JSON</span>
 		{{/if}} 
+		and it is 
 		{{#if isCompliant}}
-			and it is <span class="label label-success">compliant</span>
+			<span class="label label-success">Compliant</span>
 		{{else}}
-			but it is <span class="label label-danger">not compliant</span>
+			<span class="label label-danger">Not Compliant</span>
 		{{/if}} 		
-		 with jsonapi.org
+		 with <a href='http://jsonapi.org/format/'>jsonapi.org</a>
 	</div>
 </script>
