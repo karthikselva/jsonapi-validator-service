@@ -19,6 +19,9 @@
 		<div class="panel panel-default">
 		  <div class="panel-heading">
 		  	Input your JSON API response
+		  	<button type="button" class="btn btn-default btn-sm" onclick="UX.RESULTS.loadSample()">
+				  load sample
+				</button>		 		  	
 		  </div>
 		  <div class="panel-body">
 				<textarea class="form-control" id="json-input" style="width: 100%; height: 770px;" placeholder="Paste your JSON here"></textarea>
@@ -30,7 +33,7 @@
 		  <div class="panel-heading">
 		  	Results
 		  	<button type="button" class="btn btn-default btn-sm" onclick="UX.RESULTS.runCheck()">
-				  <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> refresh
+				  refresh
 				</button>		  	
 		  </div>
 		  <div class="panel-body" style="height: 790px">
