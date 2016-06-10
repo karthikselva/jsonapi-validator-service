@@ -22,3 +22,4 @@
 //= require ux/results
 //= require handlebars
 //= require handlebars-helpers
+//= require jquery-slimscroll

@@ -18,15 +18,16 @@
 				</button>
 		  </div>
 		  <div class="panel-body">
-				<textarea id="jsonInput" style="width: 100%; height: 800px;" placeholder="Paste your JSON here"></textarea>
+				<textarea class="form-control" id="json-input" style="width: 100%; height: 770px;" placeholder="Paste your JSON here"></textarea>
 		  </div>
 		</div>
   </div>
   <div class="col-md-5">
   	<div class="panel panel-primary">
 		  <div class="panel-heading">Results</div>
-		  <div class="panel-body">
-		  	<div id="results" style="width: 100%; height: 800px;">
+		  <div class="panel-body" style="height: 800px">
+		  	<div id='json-valid-result'></div>
+		  	<div id="results">
 		    	Please input JSON to see results.
 		    </div>
 		  </div>
@@ -49,4 +50,22 @@
 		  </div>
 		</div>
 	{{/list}}
+</script>
+
+
+<script id="json-valid" type="text/x-handlebars-template">
+	<div class="alert alert-default" role="alert">
+		You have provided
+		{{#if isValid}}
+			<span class="label label-success">Valid JSON</span>
+		{{else}}
+			<span class="label label-danger">Invalid JSON</span>
+		{{/if}} 
+		{{#if isCompliant}}
+			and it is <span class="label label-success">compliant</span>
+		{{else}}
+			but it is <span class="label label-danger">not compliant</span>
+		{{/if}} 		
+		 with jsonapi.org
+	</div>
 </script>

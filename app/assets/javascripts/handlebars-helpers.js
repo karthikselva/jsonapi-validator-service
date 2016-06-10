@@ -8,3 +8,11 @@ Handlebars.registerHelper('list', function(items, options) {
 
   return out;
 });
+
+Handlebars.registerHelper('if', function(conditional, options) {
+  if(conditional) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});

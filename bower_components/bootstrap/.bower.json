@@ -1,45 +1,34 @@
 {
   "name": "bootstrap",
-  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-  "keywords": [
-    "css",
-    "js",
-    "sass",
-    "mobile-first",
-    "responsive",
-    "front-end",
-    "framework",
-    "web"
-  ],
-  "homepage": "http://getbootstrap.com",
-  "license": "MIT",
-  "moduleType": "globals",
+  "version": "3.1.1",
   "main": [
-    "scss/bootstrap.scss",
-    "dist/js/bootstrap.js"
+    "./dist/css/bootstrap.css",
+    "./dist/js/bootstrap.js",
+    "./dist/fonts/glyphicons-halflings-regular.eot",
+    "./dist/fonts/glyphicons-halflings-regular.svg",
+    "./dist/fonts/glyphicons-halflings-regular.ttf",
+    "./dist/fonts/glyphicons-halflings-regular.woff"
   ],
   "ignore": [
-    "/.*",
+    "**/.*",
     "_config.yml",
     "CNAME",
     "composer.json",
     "CONTRIBUTING.md",
     "docs",
-    "js/tests",
-    "test-infra"
+    "js/tests"
   ],
   "dependencies": {
-    "jquery": "1.9.1 - 2"
+    "jquery": ">= 1.9.0"
   },
-  "version": "4.0.0-alpha.2",
-  "_release": "4.0.0-alpha.2",
+  "homepage": "https://github.com/twbs/bootstrap",
+  "_release": "3.1.1",
   "_resolution": {
     "type": "version",
-    "tag": "v4.0.0-alpha.2",
-    "commit": "48938155eb24b4ccdde09426066869504c6dab3c"
+    "tag": "v3.1.1",
+    "commit": "a365d8689c3f3cee7f1acf86b61270ecca8e106d"
   },
   "_source": "https://github.com/twbs/bootstrap.git",
-  "_target": "v4.0.0-alpha.2",
-  "_originalSource": "bootstrap",
-  "_direct": true
+  "_target": "~3.1.1",
+  "_originalSource": "bootstrap"
 }
