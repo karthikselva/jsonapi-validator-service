@@ -138,7 +138,7 @@ $( document ).ready(function() {
 		UX.RESULTS.displayErrors($(this));
 	});
 	$('#results').slimScroll({
-	    height: '700px',
+	    height: '600px',
       railVisible: true
 	});
 });
