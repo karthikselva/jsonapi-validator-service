@@ -132,16 +132,22 @@ UX.RESULTS = (function() {
 		editor.setValue(JSON.stringify(jsonData, null, 2));
 	};
 
+	var clear = function() {
+		editor.setValue('');
+	};
+
 	return {
 		displayErrors: displayErrors,
 		runCheck: runCheck,
 		loadSample: loadSample,
-		setEditor: setEditor
+		setEditor: setEditor,
+		clear: clear
 	};
 })();
 
 $( document ).ready(function() {
 	var editor = ace.edit("json-input");
+	editor.setTheme("ace/theme/monokai");
 	editor.getSession().setMode("ace/mode/javascript");
 	UX.RESULTS.setEditor(editor);
 	document.getElementById('json-input').style.fontSize='14px';
@@ -149,6 +155,8 @@ $( document ).ready(function() {
 	editor.getSession().on('change', function(e) {
 		UX.RESULTS.displayErrors();
 	});
+
+	UX.RESULTS.loadSample();
 	
 	$('#results').slimScroll({
 	    height: '600px',
