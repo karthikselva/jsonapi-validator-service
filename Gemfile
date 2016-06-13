@@ -47,3 +47,4 @@ group :development do
 end
 gem "bower-rails", "~> 0.10.0"
 gem 'jsonapi-validator', '0.0.1.1'
+gem 'ace-rails-ap'

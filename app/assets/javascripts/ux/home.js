@@ -2,6 +2,12 @@ var UX = UX || {};
 UX.RESULTS = UX.RESULTS || {};
 UX.RESULTS = (function() {
 
+	var editor;
+
+	var setEditor = function(edt) {
+		editor = edt;
+	}
+
 	var parseValidJson = function(json) {
 		try {
 			JSON.parse(json);
@@ -33,7 +39,7 @@ UX.RESULTS = (function() {
 
 	var displayErrors = function($panel) {
 		$('#results').html('');
-		var data = parseValidJson($panel.val());
+		var data = parseValidJson(editor.getValue());
 		JSONAPI.VALIDATOR.setData(data);
 		var results = JSONAPI.VALIDATOR.results();
 		displayStatus(data!=null,results["errors"].length == 0 && data != null);
@@ -123,22 +129,29 @@ UX.RESULTS = (function() {
 		    }
 		  }]
 		};
-		$('#json-input').html(JSON.stringify(jsonData, null, 2));
+		editor.setValue(JSON.stringify(jsonData, null, 2));
 	};
 
 	return {
 		displayErrors: displayErrors,
 		runCheck: runCheck,
-		loadSample: loadSample
+		loadSample: loadSample,
+		setEditor: setEditor
 	};
 })();
 
 $( document ).ready(function() {
-	$( "#json-input" ).change(function() {
-		UX.RESULTS.displayErrors($(this));
+	var editor = ace.edit("json-input");
+	editor.getSession().setMode("ace/mode/javascript");
+	UX.RESULTS.setEditor(editor);
+	document.getElementById('json-input').style.fontSize='14px';
+
+	editor.getSession().on('change', function(e) {
+		UX.RESULTS.displayErrors();
 	});
+	
 	$('#results').slimScroll({
 	    height: '600px',
-      railVisible: true
+    	railVisible: true
 	});
 });

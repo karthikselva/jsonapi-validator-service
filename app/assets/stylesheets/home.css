@@ -1,1 +1,9 @@
-body { padding-top: 70px; }
+body { 
+	padding-top: 70px; 
+}
+
+#json-input {
+    position: relative;
+    width: 100%;
+    height: 760px;
+}
