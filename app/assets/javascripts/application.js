@@ -24,3 +24,4 @@
 //= require handlebars-helpers
 //= require jquery-slimscroll
 //= require ace-rails-ap
+//= require ace/mode-javascript
